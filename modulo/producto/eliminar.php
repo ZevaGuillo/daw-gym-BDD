@@ -7,12 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="MUÑOZ SOLORZANO JOHANAN NATANAEL">
     <title>ELIMINACION DE PRODUCTO</title>
+    <?php  
+        include_once '../../plantillas/styles.php';
+    ?>
 </head>
 
 <body>
 
     <?php
-
+        $titulo = 'Eliminar Producto';
+        include_once '../../plantillas/encabezado.php';
         require_once '../../conexion.php';
 
         if (!empty($_GET['id'])) {

@@ -1,5 +1,5 @@
 <div class="navbar">
-    <h1>
+    <h1 class="titulo">
         <?php echo isset($titulo)?$titulo:""; ?>
     </h1>
     <nav>

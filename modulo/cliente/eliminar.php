@@ -7,12 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="Zevallos Escalante Guillermo David">
     <title>Eliminacion de Clientes</title>
+    <?php  
+        include_once '../../plantillas/styles.php';
+    ?>
+    <style>
+    input {
+        margin: .7rem 0;
+    }
+    </style>
 </head>
 
 <body>
 
     <?php
-
+    $titulo = 'Eliminar cliente';
+    include_once '../../plantillas/encabezado.php';
     require_once '../../conexion.php';
 
     if (!empty($_GET['id'])) {
@@ -24,14 +33,18 @@
         $filas = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($filas as $fila) {
         ?>
-            <div>
-                <form method="post">
-                    <label>Id:</label><input type="text" name="id" readonly="" value="<?php echo $fila['id'] ?>">
-                    <label>Nombre:</label><input type="text" name="nombre" value="<?php echo $fila['nombre'] ?>">
-                    <input type="submit" value="Eliminar">
-                </form>
-            </div>
-        <?php
+    <main>
+        <form method="post">
+            <label>Id:
+                <input type="text" name="id" readonly="" value="<?php echo $fila['id'] ?>">
+            </label>
+            <label>Nombre:
+                <input type="text" name="nombre" value="<?php echo $fila['nombre'] ?>">
+            </label>
+            <input type="submit" value="Eliminar">
+        </form>
+    </main>
+    <?php
         }
     }
     ?>
