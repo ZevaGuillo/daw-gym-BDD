@@ -50,10 +50,10 @@
 
 <body>
     <?php  
-        $titulo = 'Productos';
+        $titulo = 'Suscripciones';
         include_once '../../plantillas/encabezado.php';
         require_once('../../conexion.php');
-        $sql = "SELECT * FROM producto";
+        $sql = "SELECT * FROM suscripcion";
         $statement = $pdo->prepare($sql);
         $statement->execute();
     ?>
@@ -66,13 +66,13 @@
                 foreach ($filas as $fila) {
             ?>
                 <tr>
-                    <td><?php echo $fila['prd_id'] ?></td>
-                    <td><?php echo $fila['prd_nombre'] ?></td>
-                    <td><?php echo $fila['prd_valor'] ?></td>
-                    <td><?php echo $fila['prd_cantidad'] ?></td>
-                    <td><?php echo $fila['prd_estado'] ?></td>
-                    <td><?php echo $fila['prd_codigo_proveedor_producto']?></td>
-                    <td><?php echo  "<a href='eliminar.php?id=".$fila['prd_id']."'>Eliminar</a>";?></td>
+                    <td><?php echo $fila['id'] ?></td>
+                    <td><?php echo $fila['nombre'] ?></td>
+                    <td><?php echo $fila['apellido'] ?></td>
+                    <td><?php echo $fila['edad'] ?></td>
+                    <td><?php echo $fila['genero'] ?></td>
+                    <td><?php echo $fila['plan']?></td>
+                    <td><?php echo  "<a href='eliminar.php?id=".$fila['id']."'>Eliminar</a>";?></td>
                 </tr>
                 <?php } ?>
             </table>
