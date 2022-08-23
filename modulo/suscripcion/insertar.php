@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="VELEZ CALERO JOE FERNANDO">
     <title>Suscripcion</title>
+    <?php  
+        include_once '../../plantillas/styles.php';
+    ?>
     <style>
     * {
         color: #aaa6ca;

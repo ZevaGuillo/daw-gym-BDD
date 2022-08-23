@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="VELEZ CALERO JOE FERNANDO">
     <title>Suscripcion</title>
-    <style>
+    <?php  
+        include_once '../../plantillas/styles.php';
+    ?>
+    <style> 
     * {
         color: #aaa6ca;
     }
@@ -43,7 +46,7 @@
         flex-wrap: wrap;
         align-content: center;
         justify-content: center;
-        background: #0c0c22;
+        background: #ebe7e0;
     }
     </style>
 </head>
