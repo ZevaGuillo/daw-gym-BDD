@@ -12,7 +12,7 @@
     ?>
     <style> 
     * {
-        color: #aaa6ca;
+        color: #f2f2f2;
     }
 
     main {
@@ -22,7 +22,6 @@
         flex-wrap: wrap;
         align-content: center;
         align-items: center;
-        background: orange;
     }
 
     .contenedor {
@@ -41,13 +40,22 @@
     }
 
     .tabla {
-        display: flex;
+        width: 100%;
         flex-direction: column;
         flex-wrap: wrap;
         align-content: center;
         justify-content: center;
-        background: #ebe7e0;
+        background: #031634;
     }
+
+    .tabla:hover{
+        background: #e2aa87;
+    }
+
+    .tabla tr:hover{
+        background: red;
+    }
+
     </style>
 </head>
 
