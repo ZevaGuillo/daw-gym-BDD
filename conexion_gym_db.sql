@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-08-2022 a las 19:00:26
+-- Tiempo de generación: 23-08-2022 a las 22:08:30
 -- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Versión de PHP: 8.0.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -60,6 +60,37 @@ CREATE TABLE `producto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`prd_id`, `prd_nombre`, `prd_valor`, `prd_cantidad`, `prd_estado`, `prd_codigo_proveedor_producto`) VALUES
+(2, 'Joe', 2, 1, '1', '100');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `suscripcion`
+--
+
+CREATE TABLE `suscripcion` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(60) NOT NULL,
+  `apellido` varchar(60) NOT NULL,
+  `edad` int(3) NOT NULL,
+  `genero` varchar(60) NOT NULL,
+  `plan` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `suscripcion`
+--
+
+INSERT INTO `suscripcion` (`id`, `nombre`, `apellido`, `edad`, `genero`, `plan`) VALUES
+(1, 'Joe', '0', 21, 'Masculino', 'MENSUAL'),
+(2, 'Joe', 'Velez', 21, 'Masculino', 'ANUAL'),
+(3, 'Austin', 'Salguero', 31, 'Femenino', 'Gratis');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -76,6 +107,12 @@ ALTER TABLE `producto`
   ADD PRIMARY KEY (`prd_id`);
 
 --
+-- Indices de la tabla `suscripcion`
+--
+ALTER TABLE `suscripcion`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -89,7 +126,13 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `prd_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `prd_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `suscripcion`
+--
+ALTER TABLE `suscripcion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
