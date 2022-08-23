@@ -7,7 +7,7 @@
 }
 
 body{
-    background: #261E14;
+    background: #874d3d;
     color: #f2f2f2
 }
 

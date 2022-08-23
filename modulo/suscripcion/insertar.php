@@ -12,85 +12,112 @@
     ?>
     <style>
     * {
-        color: #aaa6ca;
+        color: black;
+        font-size: 18px;
     }
 
-    #central {
-        display: flex;
-        flex-direction: column;
+    #principal {
+        padding: 1rem 15%;
     }
 
     form {
+        width: auto;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         align-content: center;
         justify-content: center;
-        background: #0c0c22;
     }
 
     .form_div {
+        width: 1000px;
         padding: 1%;
         margin: 1%;
-        background: #32314e;
     }
 
-    .central_dos {
+    .principal_abajo {
         display: flex;
         justify-content: center;
         margin: 1%;
+    }
+
+    #labeltext {
+        margin-left: 30px;
+        padding: 1%;
+        font-size: 18px;
+    }
+
+    .labelprinci {
+        font-size: 30px;
     }
     </style>
 </head>
 
 <body>
-    <main id="central">
+    <?php
+        $titulo = 'Insertar Suscripciones';
+        include_once '../../plantillas/encabezado.php';
+    ?>
+    <main id="principal">
         <div>
             <form method="POST">
+
+                <hr>
+
                 <div class="form_div">
                     <label>Nombre</label>
                     <input type="text" name="nombre">
                 </div>
+
+                <hr>
 
                 <div class="form_div">
                     <label>Apellido</label>
                     <input type="text" name="apellido">
                 </div>
 
-                <div class=" form_div">
+                <hr>
+
+                <div class="form_div">
                     <label>Edad</label>
                     <input type="number" name="edad">
                 </div>
 
+                <hr>
+
                 <div class="form_div">
                     <input type="radio" id="masculino" name="genero" value="Masculino" checked>
-                    <label for="masculino">Masculino</label><br>
+                    <label for="masculino" id="labeltext">Masculino</label><br>
                     <input type="radio" id="femenino" name="genero" value="Femenino">
-                    <label for="femenino">Femenino</label><br>
+                    <label for="femenino" id="labeltext">Femenino</label><br>
                 </div>
+
+                <hr>
 
                 <div class="form_div">
-                    <fieldset>
-                        <legend>Plan</legend>
-                        <div>
-                            <input type="checkbox" name="plan[]" value="Gratis">
-                            <label>Gratis</label>
-                        </div>
+                    <label class="labelprinci">Plan<label>
+                            <div>
+                                <input type="checkbox" name="plan[]" value="Gratis">
+                                <label id="labeltext">Gratis</label>
+                            </div>
 
-                        <div>
-                            <input type="checkbox" name="plan[]" value="Mensual">
-                            <label>Mensual</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="plan[]" value="Anual">
-                            <label>Anual</label>
-                        </div>
-                    </fieldset>
+                            <div>
+                                <input type="checkbox" name="plan[]" value="Mensual">
+                                <label id="labeltext">Mensual</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="plan[]" value="Anual">
+                                <label id="labeltext">Anual</label>
+                            </div>
                 </div>
 
-                <div class="central_dos">
+                <hr>
+
+                <div class="principal_abajo">
                     <input type="submit" value="Agregar">
                 </div>
+
+                <hr>
             </form>
         </div>
     </main>
