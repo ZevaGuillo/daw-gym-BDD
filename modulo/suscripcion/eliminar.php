@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="VELEZ CALERO JOE FERNANDO">
-    <title>Suscripcion</title>
+    <title>Eliminacion De Suscripcion</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
 
         if (!empty($_GET['id'])) {
             $data = ['id' => htmlentities($_GET['id'])];
-            $sql = "select * from producto where prd_id = :id";
+            $sql = "select * from suscripcion where prd_id = :id";
             $stmt = $pdo->prepare($sql);
             $stmt->execute($data);
 
@@ -26,21 +26,19 @@
                 ?>
     <div>
         <form method="post">
-            <!-- <input type="hidden" name="txtid" value=""> -->
-            <label>Id:</label><input type="text" name="prd_id" readonly="" value="<?php echo $fila['prd_id'] ?>">
-            <label>Nombre:</label><input type="text" name="nombre_prd" value="<?php echo $fila['prd_nombre'] ?>">
+            <label>Id:</label><input type="text" name="id" readonly="" value="<?php echo $fila['id'] ?>">
+            <label>Nombre:</label><input type="text" name="nombre" value="<?php echo $fila['nombre'] ?>">
             <input type="submit" value="Eliminar">
         </form>
-
     </div>
     <?php
             }
         }
         ?>
     <?php
-        if (isset($_POST['prd_id'])) {
-            $data = ['id' => htmlentities($_POST['prd_id'])];
-            $sql = "delete from producto where prd_id = :id";
+        if (isset($_POST['id'])) {
+            $data = ['id' => htmlentities($_POST['id'])];
+            $sql = "delete from suscripcion where id = :id";
             $stmt = $pdo->prepare($sql);
             $stmt->execute($data);
 
