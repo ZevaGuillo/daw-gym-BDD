@@ -46,37 +46,41 @@
             <form method="POST">
                 <div class="form_div">
                     <label>Nombre</label>
-                    <input type="text" name="nombrePrd">
+                    <input type="text" name="nombre">
                 </div>
 
                 <div class="form_div">
-                    <label>Valor</label>
-                    <input type="number" name="valorPrd">
+                    <label>Apellido</label>
+                    <input type="text" name="apellido">
                 </div>
 
                 <div class=" form_div">
-                    <label>Cantidad</label>
-                    <input type="number" name="cantidadPrd">
+                    <label>Edad</label>
+                    <input type="number" name="edad">
                 </div>
 
                 <div class="form_div">
-                    <input type="radio" id="verdadero" name="estadoPrd" value="1" checked>
-                    <label for="verdadero">Verdadero</label><br>
-                    <input type="radio" id="falso" name="estadoPrd" value="2">
-                    <label for="falso">Falso</label><br>
+                    <input type="radio" id="masculino" name="genero" value="Masculino" checked>
+                    <label for="masculino">Masculino</label><br>
+                    <input type="radio" id="femenino" name="genero" value="Femenino">
+                    <label for="femenino">Femenino</label><br>
                 </div>
 
                 <div class="form_div">
                     <fieldset>
-                        <legend>Proveedor</legend>
+                        <legend>Plan</legend>
                         <div>
-                            <input type="checkbox" name="prov_prd[]" value="100">
-                            <label>NC_CODE</label>
+                            <input type="checkbox" name="plan[]" value="Gratis">
+                            <label>Gratis</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" name="prov_prd[]" value="500">
-                            <label>ST</label>
+                            <input type="checkbox" name="plan[]" value="Mensual">
+                            <label>Mensual</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="plan[]" value="Anual">
+                            <label>Anual</label>
                         </div>
                     </fieldset>
                 </div>
@@ -90,17 +94,17 @@
     <?php
         require_once('../../conexion.php');
         
-        if(!empty($_POST['nombrePrd']) && !empty($_POST['valorPrd']) && isset($_POST['estadoPrd']) && !empty($_POST['prov_prd'])){
+        if(!empty($_POST['nombre']) && !empty($_POST['apellido']) && isset($_POST['genero']) && !empty($_POST['plan'])){
             $diccionario =[
-                "nombre" => htmlentities($_POST['nombrePrd']),
-                "valor" => (float)htmlentities($_POST['valorPrd']),
-                "cantidad" => (int)htmlentities($_POST['cantidadPrd']),
-                "estado" => htmlentities($_POST['estadoPrd']),
-                "proveedor" => implode("|",$_POST['prov_prd'])
+                "nombre" => htmlentities($_POST['nombre']),
+                "apellido" => htmlentities($_POST['apellido']),
+                "edad" => (int)htmlentities($_POST['edad']),
+                "genero" => htmlentities($_POST['genero']),
+                "plan" => implode("|",$_POST['plan'])
             ];
             
 
-            $sql = "INSERT INTO producto(prd_nombre, prd_valor,prd_cantidad,prd_estado,prd_codigo_proveedor_producto) VALUES(:nombre, :valor, :cantidad, :estado, :proveedor)";
+            $sql = "INSERT INTO suscripcion(nombre,apellido,edad,genero,plan) VALUES(:nombre, :apellido, :edad, :genero, :plan)";
             echo $sql;
             
             $statement = $pdo->prepare($sql);

@@ -19,7 +19,7 @@
         flex-wrap: wrap;
         align-content: center;
         align-items: center;
-        background: #0c0c22;
+        background: orange;
     }
 
     .contenedor {
