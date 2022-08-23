@@ -7,32 +7,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="Zevallos Escalante Guillermo David">
     <title>Insertar Clientes</title>
+    <?php  
+        include_once '../../plantillas/styles.php';
+    ?>
+    <style>
+    input{
+        margin: .7rem 0;
+    }
+    </style>
 </head>
 
 <body>
-    <main id="central">
-        <div>
-            <form method="POST">
-                <label for="inputNombre">Nombre</label>
+    <?php 
+        $titulo = 'Insertar Cliente';
+        include_once '../../plantillas/encabezado.php';
+    ?>
+    <main>
+        <form method="POST">
+            <label for="inputNombre">Nombre
                 <input type="text" id="inputNombre" name="nombre">
+            </label>
 
-                <label for="inputTele">Tel&eacute;fono</label>
+
+            <label for="inputTele">Tel&eacute;fono
                 <input type="text" id="inputTele" name="telefono">
+            </label>
 
-                <label for="inputEmail">Email</label>
+
+            <label for="inputEmail">Email
                 <input type="email" id="inputEmail" name="email">
 
-                <label for="inputAsunto">Asunto</label>
+            </label>
+
+            <label for="inputAsunto">Asunto
                 <input type="text" id="inputAsunto" name="asunto">
+            </label>
 
-                <label for="inputMensaje">Mensaje</label>
+
+            <label for="inputMensaje">Mensaje
                 <textarea name="mensaje" id="inputMensaje" cols="30" rows="10" name="mensaje"></textarea>
+            </label>
 
-                <div class="central_dos">
-                    <input type="submit" value="Agregar">
-                </div>
-            </form>
-        </div>
+            <div style="margin: .7rem 0;">
+                <input type="submit" value="Agregar">
+            </div>
+        </form>
     </main>
     <?php
         require_once('../../conexion.php');

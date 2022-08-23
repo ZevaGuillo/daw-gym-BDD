@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="MUÑOZ SOLORZANO JOHANAN NATANAEL">
     <title>Productos</title>
+    <?php  
+        include_once '../../plantillas/styles.php';
+    ?>
     <style>
     * {
         color: #aaa6ca;
@@ -41,6 +44,10 @@
 </head>
 
 <body>
+    <?php
+        $titulo = 'Eliminar cliente';
+        include_once '../../plantillas/encabezado.php';
+    ?>
     <main id="central">
         <div>
             <form method="POST">
