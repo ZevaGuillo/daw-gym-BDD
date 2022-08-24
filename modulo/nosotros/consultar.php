@@ -22,7 +22,6 @@
 </head>
 
 <body>
-    <h1>Formulario de GYM</h1>
     <?php
         $titulo = 'Nosotros';
         include_once '../../plantillas/encabezado.php';
