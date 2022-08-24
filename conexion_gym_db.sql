@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-08-2022 a las 22:08:30
+-- Tiempo de generación: 24-08-2022 a las 22:05:11
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.0.19
 
@@ -43,6 +43,21 @@ CREATE TABLE `cliente` (
 INSERT INTO `cliente` (`id`, `nombre`, `telefono`, `email`, `asunto`, `mensaje`) VALUES
 (1, 'guillermo', 9444, 'guillo@gmail.com', 'Prueba ', 'quiero probar esto'),
 (3, 'David ', 434543, 'guielrmo@g.com', 'Comer', 'Comer rikco');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `nosotros`
+--
+
+CREATE TABLE `nosotros` (
+  `ID_REGISTRO` int(12) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `Correo` varchar(100) NOT NULL,
+  `PagoMensual` int(20) NOT NULL,
+  `fecha` date NOT NULL,
+  `ObjetivosGym` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -101,6 +116,12 @@ ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `nosotros`
+--
+ALTER TABLE `nosotros`
+  ADD PRIMARY KEY (`ID_REGISTRO`);
+
+--
 -- Indices de la tabla `producto`
 --
 ALTER TABLE `producto`
@@ -121,6 +142,12 @@ ALTER TABLE `suscripcion`
 --
 ALTER TABLE `cliente`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `nosotros`
+--
+ALTER TABLE `nosotros`
+  MODIFY `ID_REGISTRO` int(12) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
