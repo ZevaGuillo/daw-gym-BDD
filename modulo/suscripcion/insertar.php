@@ -16,10 +16,6 @@
         font-size: 18px;
     }
 
-    #principal {
-        padding: 1rem 15%;
-    }
-
     form {
         width: auto;
         display: flex;
@@ -29,7 +25,7 @@
         justify-content: center;
     }
 
-    .form_div {
+    .formularios {
         width: 1000px;
         padding: 1%;
         margin: 1%;
@@ -50,6 +46,10 @@
     .labelprinci {
         font-size: 30px;
     }
+
+    #ContenedorPrinciapl {
+        padding: 1rem 15%;
+    }
     </style>
 </head>
 
@@ -58,34 +58,34 @@
         $titulo = 'Insertar Suscripciones';
         include_once '../../plantillas/encabezado.php';
     ?>
-    <main id="principal">
+    <main id="ContenedorPrinciapl">
         <div>
             <form method="POST">
 
                 <hr>
 
-                <div class="form_div">
+                <div class="formularios">
                     <label>Nombre</label>
                     <input type="text" name="nombre">
                 </div>
 
                 <hr>
 
-                <div class="form_div">
+                <div class="formularios">
                     <label>Apellido</label>
                     <input type="text" name="apellido">
                 </div>
 
                 <hr>
 
-                <div class="form_div">
+                <div class="formularios">
                     <label>Edad</label>
                     <input type="number" name="edad">
                 </div>
 
                 <hr>
 
-                <div class="form_div">
+                <div class="formularios">
                     <input type="radio" id="masculino" name="genero" value="Masculino" checked>
                     <label for="masculino" id="labeltext">Masculino</label><br>
                     <input type="radio" id="femenino" name="genero" value="Femenino">
@@ -94,7 +94,7 @@
 
                 <hr>
 
-                <div class="form_div">
+                <div class="formularios">
                     <label class="labelprinci">Plan<label>
                             <div>
                                 <input type="checkbox" name="plan[]" value="Gratis">

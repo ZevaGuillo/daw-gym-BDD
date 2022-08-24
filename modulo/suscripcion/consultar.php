@@ -10,7 +10,7 @@
     <?php  
         include_once '../../plantillas/styles.php';
     ?>
-    <style> 
+    <style>
     * {
         color: #f2f2f2;
     }
@@ -24,7 +24,7 @@
         align-items: center;
     }
 
-    .contenedor {
+    .Principal {
         display: flex;
         justify-content: center;
     }
@@ -39,7 +39,7 @@
         margin: 1%;
     }
 
-    .tabla {
+    .tablaconsultarsuscrip {
         width: 100%;
         flex-direction: column;
         flex-wrap: wrap;
@@ -48,14 +48,13 @@
         background: #031634;
     }
 
-    .tabla:hover{
+    .tablaconsultarsuscrip:hover {
         background: #e2aa87;
     }
 
-    .tabla tr:hover{
+    .tablaconsultarsuscrip tr:hover {
         background: red;
     }
-
     </style>
 </head>
 
@@ -70,8 +69,8 @@
     ?>
 
     <main>
-        <div class="contenedor">
-            <table class="tabla">
+        <div class="Principal">
+            <table class="tablaconsultarsuscrip">
                 <?php
                 $filas = $statement->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($filas as $fila) {
