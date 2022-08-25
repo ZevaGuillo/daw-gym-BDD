@@ -18,7 +18,7 @@
 
         if (!empty($_GET['id'])) {
             $data = ['id' => htmlentities($_GET['id'])];
-            $sql = "select * from suscripcion where prd_id = :id";
+            $sql = "select * from suscripcion where id = :id";
             $stmt = $pdo->prepare($sql);
             $stmt->execute($data);
 
