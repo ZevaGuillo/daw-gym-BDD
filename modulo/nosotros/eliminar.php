@@ -25,7 +25,7 @@
 
         if (!empty($_GET['id'])) {
             $data = ['id' => htmlentities($_GET['id'])];
-            $sql = "select * from nosotros where ID_REGISTRO = :id";
+            $sql = "select * from nosotros where id = :id";
             $stmt = $pdo->prepare($sql);
             $stmt->execute($data);
 
@@ -34,7 +34,7 @@
     ?>
     <div>
         <form method="post">
-            <label>Id:</label><input type="text" name="txtid" readonly="" value="<?php echo $fila['ID_REGISTRO'] ?>">
+            <label>Id:</label><input type="text" name="id" readonly="" value="<?php echo $fila['id'] ?>">
             <input type="submit" value="Eliminar">
         </form>
     </div>
@@ -44,9 +44,9 @@
             ?>
 
     <?php
-        if (isset($_POST['txtid'])) {
-            $data = ['id' => htmlentities($_POST['txtid'])];
-            $sql = "delete from nosotros where ID_REGISTRO = :id";
+        if (isset($_POST['id'])) {
+            $data = ['id' => htmlentities($_POST['id'])];
+            $sql = "delete from nosotros where id = :id";
             $stmt = $pdo->prepare($sql);
             $stmt->execute($data);
 

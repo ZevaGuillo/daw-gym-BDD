@@ -24,21 +24,21 @@
     <div>
         <form method="post">
             <label>Nombre:</label>
-            <input type="text" name="txtNombre"><br />
+            <input type="text" name="nombre"><br />
 
             <label>correo:</label>
-            <input type="email" name="txtCorreo"><br />
+            <input type="email" name="correo"><br />
 
             <label>Cuanto dinero paga mensualmente en el gimnasio:</label>
-            <input type="text" name="txtPago"><br />
+            <input type="text" name="pagoMensual"><br />
 
             <label>Fecha de Pago:</label>
-            <input type="date" name="txtFecha"><br />
+            <input type="date" name="fecha"><br />
 
             <label>Cuales son sus objetivos en el GYM:</label><br />
-            <input type="radio" name="radObj" value="Adelgazar">Adelgazar<br />
-            <input type="radio" name="radObj" value="Aumento de Masa Muscular">Aumento Masa Muscular<br />
-            <input type="radio" name="radObj" value="Tonificación">tonificación<br />
+            <input type="radio" name="objetivos" value="Adelgazar">Adelgazar<br />
+            <input type="radio" name="objetivos" value="Aumento de Masa Muscular">Aumento Masa Muscular<br />
+            <input type="radio" name="objetivos" value="Tonificación">tonificación<br />
 
 
             <input type="submit" value="Insertar"><br />
@@ -46,33 +46,28 @@
     </div>
 
     <?php
-        if (!empty($_POST['txtNombre']) && !empty($_POST['txtCorreo']) 
-            && !empty($_POST['txtPago']) && !empty($_POST['txtFecha'])) {
-          
-            $nombre = htmlentities($_POST['txtNombre']);
-            $correo = htmlentities($_POST['txtCorreo']);
-            $pago = htmlentities($_POST['txtPago']);
-            $fecha = htmlentities($_POST['txtFecha']);
-            $objetivos=isset($_POST['radObj'])? htmlentities($_POST['radObj']):'';
+       $data = [
+        $nombre=$_POST['nombre'],
+        $correo=$_POST['correo'],
+        $pagoMensual=$_POST['pagoMensual'],
+        $fecha=$_POST['fecha'],
+        $objetivos= htmlentities($_POST['objetivos']),
+    ];
+    $sql = "INSERT INTO nosotros (id, nombre, correo, pagoMensual,fecha,objetivos)"
+."VALUES(NULL,'$nombre','$correo','$pagoMensual','$fecha','$objetivos')";
 
-            $data = [
-                'nom'=>$nombre,
-                'cor' =>$correo,
-                'pag'=>$pago,
-                'fec' =>$fecha,
-                'obj' =>$objetivos,
-            ];
-            $sql = "INSERT into nosotros(nombre, correo, pago, fecha, objetivos) 
-            values(:nom, :cor,:pag,:fec,:obj)";
-                 echo $sql;
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute($data);
+$ejecutarInsertar =mysqli_query($enlace,    $sql);
+
+if(!$ejecutarInsertar){
+header("location:consultar.php");
+} else{
+
+echo"Error en la linea de sql";
+}
+    ?>
             
-            if ($stmt->rowCount() > 0) {// rowCount() permite conocer el numero de filas afectadas
-                header("location:consultar.php");
-            }
-        }
-        ?>
+        
+        
 </body>
 
 </html>

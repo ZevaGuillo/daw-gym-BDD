@@ -49,15 +49,15 @@
                     foreach ($filas as $fila) {
                         ?>
                 <tr>
-                    <td><?php echo $fila['ID_REGISTRO'] ?></td>
+                    <td><?php echo $fila['id'] ?></td>
                     <td><?php echo $fila['nombre'] ?></td>
                     <td><?php echo $fila['correo'] ?></td>
                     <td><?php echo $fila['pagoMensual'] ?></td>
                     <td><?php echo $fila['fechaPago'] ?></td>
                     <td><?php echo $fila['objetivos'] ?></td>
                     <td>
-                        <a href="editar.php?id=<?php echo $fila['ID_REGISTRO'] ?>">Editar</a>
-                        <a href="eliminar.php?id=<?php echo $fila['ID_REGISTRO'] ?>">Eliminar</a>
+                        <a href="editar.php?id=<?php echo $fila['id'] ?>">Editar</a>
+                        <a href="eliminar.php?id=<?php echo $fila['id'] ?>">Eliminar</a>
                     </td>
                 </tr>
                 <?php } ?>
