@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="VELEZ CALERO JOE FERNANDO">
-    <title>Suscripcion</title>
+    <title>Consultar Suscripcion</title>
     <?php  
         include_once '../../plantillas/styles.php';
     ?>
@@ -24,11 +24,6 @@
         align-items: center;
     }
 
-    .Principal {
-        display: flex;
-        justify-content: center;
-    }
-
     table {
         border: #b2b2b2 1px solid;
     }
@@ -37,6 +32,11 @@
     th {
         border: #b2b2b2 1px solid;
         margin: 1%;
+    }
+
+    .Principal {
+        display: flex;
+        justify-content: center;
     }
 
     .tablaconsultarsuscrip {
