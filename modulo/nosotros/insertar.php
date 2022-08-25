@@ -64,6 +64,7 @@
             ];
             $sql = "INSERT into nosotros(nombre, correo, pago, fecha, objetivos) 
             values(:nom, :cor,:pag,:fec,:obj)";
+                 echo $sql;
             $stmt = $pdo->prepare($sql);
             $stmt->execute($data);
             
