@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <?php
         $titulo = 'Eliminar Suscripciones';
         include_once '../../plantillas/encabezado.php';

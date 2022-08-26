@@ -37,8 +37,7 @@
             <input type="radio" name="objetivos" value="Adelgazar">Adelgazar<br />
             <input type="radio" name="objetivos" value="Aumento de Masa Muscular">Aumento Masa Muscular<br />
             <input type="radio" name="objetivos" value="Tonificación">tonificación<br />
-
-
+            
             <input type="submit" value="Insertar"><br />
         </form>
     </div>

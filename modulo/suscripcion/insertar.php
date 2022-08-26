@@ -133,7 +133,6 @@
                 "plan" => implode("|",$_POST['plan'])
             ];
             
-
             $sql = "INSERT INTO suscripcion(nombre,apellido,edad,genero,plan) VALUES(:nombre, :apellido, :edad, :genero, :plan)";
             echo $sql;
             
