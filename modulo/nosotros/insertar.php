@@ -43,25 +43,24 @@
     </div>
 
     <?php
-       $data = [
-        'nombre'=> htmlentities($_POST['nombre']),
-        $correo=htmlentities($_POST['correo']),
-        $pagoMensual=htmlentities($_POST['pagoMensual']),
-        $fecha= htmlentities($_POST['fecha']),
-        $objetivos= htmlentities($_POST['objetivos'])
-    ];
-    $sql = "INSERT INTO nosotros (id, nombre, correo, pagoMensual,fecha,objetivos)"
-."VALUES(NULL,'$nombre','$correo','$pagoMensual','$fecha','$objetivos')";
-
-$ejecutarInsertar =mysqli_query($enlace, $sql);
-
-if(!$ejecutarInsertar){
-header("location:consultar.php");
-} else{
-
-echo"Error en la linea de sql";
-}
-    ?>
+        if(!empty($_POST['nombre']) && !empty($_POST['correo']) && !empty($_POST['pagoMensual'])){
+            $data = [
+                "nombre"=> htmlentities($_POST['nombre']),
+                "correo" => htmlentities($_POST['correo']),
+                "pagoMensual"=>htmlentities($_POST['pagoMensual']),
+                "fecha" => htmlentities($_POST['fecha']),
+                "objetivos" => htmlentities($_POST['objetivos']) 
+                ];
+        
+                $sql = "INSERT INTO nosotros(nombre, correo, pagoMensual,fecha,objetivos) VALUES(:nombre,:correo,:pagoMensual,:fecha, :objetivos)";
+        
+                $ejecutarInsertar = $pdo->prepare($sql);
+                $ejecutarInsertar->execute($data);
+        
+                if(!$ejecutarInsertar){
+                    header("location:consultar.php");
+                } else{
+                }}?>
 </body>
 
 </html>
