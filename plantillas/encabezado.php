@@ -6,6 +6,7 @@
         <a href="/gym/daw-gym-BDD/modulo/suscripcion/consultar.php">Suscripcion</a>
         <a href="/gym/daw-gym-BDD/modulo/nosotros/consultar.php">Nosotros</a>
         <a href="/gym/daw-gym-BDD/modulo/producto/consultar.php">Producto</a>
+        <a href="/gym/daw-gym-BDD/modulo/articulo/consultar.php">Articulo</a>
         <a href="/gym/daw-gym-BDD/modulo/cliente/consultar.php">Cliente</a>
 
     </nav>
