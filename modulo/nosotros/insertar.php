@@ -1,3 +1,15 @@
+<?php
+$servidor="localhost";
+$usuario="root";
+$clave="";
+$basedeDatos="conexion_gym_db";
+$enlace=mysqli_connect($servidor, $usuario, $clave, $basedeDatos);
+
+
+if(!$enlace){
+    echo " error con el servidor";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,27 +19,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="MAITTE CHANGO QUINTO">
     <title>Formulario gym</title>
-    <?php  
-        include_once '../../plantillas/styles.php';
-    ?>
 
 
 </head>
 
 <body>
-    <?php     
-        $titulo = 'Agregar Formulario';
-        include_once '../../plantillas/encabezado.php';
-        require_once('../../conexion.php');
-    ?>
+
+
     <h1>Agregar Usuarios</h1>
     <div>
         <form method="post">
+
             <label>Nombre:</label>
             <input type="text" name="nombre"><br />
 
             <label>correo:</label>
-            <input type="email" name="correo"><br />
+            <input type="text" name="correo"><br />
 
             <label>Cuanto dinero paga mensualmente en el gimnasio:</label>
             <input type="text" name="pagoMensual"><br />
@@ -41,33 +48,29 @@
             <input type="radio" name="objetivos" value="Tonificación">tonificación<br />
 
 
-            <input type="submit" value="Insertar"><br />
+            <input type="submit" name="registrarse" value="Insertar"><br />
         </form>
     </div>
 
     <?php
-       $data = [
-        $nombre=$_POST['nombre'],
-        $correo=$_POST['correo'],
-        $pagoMensual=$_POST['pagoMensual'],
-        $fecha=$_POST['fecha'],
-        $objetivos= htmlentities($_POST['objetivos']),
-    ];
-    $sql = "INSERT INTO nosotros (id, nombre, correo, pagoMensual,fecha,objetivos)"
+    $data = [
+    $nombre=$_POST['nombre'],
+    $correo=$_POST['correo'],
+    $pagoMensual=$_POST['pagoMensual'],
+    $fecha=$_POST['fecha'],
+   
+    $objetivos= htmlentities($_POST['objetivos']),
+];
+   
+$insertarDatos = "INSERT INTO gym (id, nombre, correo, pagoMensual,fecha,objetivos)"
 ."VALUES(NULL,'$nombre','$correo','$pagoMensual','$fecha','$objetivos')";
 
-$ejecutarInsertar =mysqli_query($enlace,    $sql);
-
+$ejecutarInsertar =mysqli_query($enlace, $insertarDatos);
 if(!$ejecutarInsertar){
-header("location:consultar.php");
-} else{
-
-echo"Error en la linea de sql";
+    echo"Error en la linea de sql";
 }
-    ?>
-            
-        
-        
+?>
+
 </body>
 
 </html>
