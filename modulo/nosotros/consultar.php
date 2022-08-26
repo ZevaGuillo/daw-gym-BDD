@@ -26,11 +26,10 @@
         $titulo = 'Nosotros';
         include_once '../../plantillas/encabezado.php';
         require_once('../../conexion.php');
-        $sql = "select * from nosotros ";
+        $sql = "select * from nosotros";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         ?>
-
     <div>
         <table>
             <thead>

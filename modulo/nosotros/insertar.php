@@ -10,8 +10,6 @@
     <?php  
         include_once '../../plantillas/styles.php';
     ?>
-
-
 </head>
 
 <body>
@@ -56,7 +54,7 @@
     $sql = "INSERT INTO nosotros (id, nombre, correo, pagoMensual,fecha,objetivos)"
 ."VALUES(NULL,'$nombre','$correo','$pagoMensual','$fecha','$objetivos')";
 
-$ejecutarInsertar =mysqli_query($enlace,    $sql);
+$ejecutarInsertar =mysqli_query($enlace, $sql);
 
 if(!$ejecutarInsertar){
 header("location:consultar.php");
@@ -65,9 +63,6 @@ header("location:consultar.php");
 echo"Error en la linea de sql";
 }
     ?>
-            
-        
-        
 </body>
 
 </html>
