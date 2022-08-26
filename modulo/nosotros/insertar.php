@@ -45,11 +45,11 @@
 
     <?php
        $data = [
-        $nombre=$_POST['nombre'],
-        $correo=$_POST['correo'],
-        $pagoMensual=$_POST['pagoMensual'],
-        $fecha=$_POST['fecha'],
-        $objetivos= htmlentities($_POST['objetivos']),
+        'nombre'=> htmlentities($_POST['nombre']),
+        $correo=htmlentities($_POST['correo']),
+        $pagoMensual=htmlentities($_POST['pagoMensual']),
+        $fecha= htmlentities($_POST['fecha']),
+        $objetivos= htmlentities($_POST['objetivos'])
     ];
     $sql = "INSERT INTO nosotros (id, nombre, correo, pagoMensual,fecha,objetivos)"
 ."VALUES(NULL,'$nombre','$correo','$pagoMensual','$fecha','$objetivos')";
